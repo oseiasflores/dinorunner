@@ -1,0 +1,132 @@
+[gd_scene load_steps=7 format=3 uid="uid://dycehutoik43t"]
+
+[ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://materiais/fonts/retro.ttf" id="1_4wifk"]
+[ext_resource type="Texture2D" uid="uid://d3hf6d2rdhg8p" path="res://materiais/new_player/hearth.png" id="2_lhnjo"]
+[ext_resource type="Texture2D" uid="uid://drkaahjferyuk" path="res://materiais/buttons/Down_Unpressed.png" id="3_0a0e7"]
+[ext_resource type="Texture2D" uid="uid://djxd5mad7sqhb" path="res://materiais/buttons/Down_Pressed.png" id="4_o7d5j"]
+[ext_resource type="Texture2D" uid="uid://dokdb3poxjwue" path="res://materiais/buttons/Up_Unpressed.png" id="5_hguqu"]
+[ext_resource type="Texture2D" uid="uid://brliv5ejtja1j" path="res://materiais/buttons/Up_Pressed.png" id="6_je7v7"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_4wifk")
+theme_override_font_sizes/font_size = 40
+text = "PONTUAÇÃO:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -420.0
+offset_top = 5.0
+offset_right = -190.0
+offset_bottom = 56.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_4wifk")
+theme_override_font_sizes/font_size = 40
+text = "RECORDE:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -263.5
+offset_top = -25.5
+offset_right = 263.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_4wifk")
+theme_override_font_sizes/font_size = 40
+text = "TOQUE PARA INICIAR!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Life" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hearts0" type="TextureRect" parent="Life"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 304.0
+offset_top = 64.0
+offset_right = 368.0
+offset_bottom = 128.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+texture = ExtResource("2_lhnjo")
+
+[node name="Hearts1" type="TextureRect" parent="Life"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 382.0
+offset_top = 64.0
+offset_right = 446.0
+offset_bottom = 128.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+texture = ExtResource("2_lhnjo")
+
+[node name="Hearts2" type="TextureRect" parent="Life"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 463.0
+offset_top = 64.0
+offset_right = 527.0
+offset_bottom = 128.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+texture = ExtResource("2_lhnjo")
+
+[node name="Hearts3" type="TextureRect" parent="Life"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 543.0
+offset_top = 63.0
+offset_right = 607.0
+offset_bottom = 127.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+texture = ExtResource("2_lhnjo")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(8, 560)
+scale = Vector2(0.0839844, 0.0839844)
+texture_normal = ExtResource("3_0a0e7")
+texture_pressed = ExtResource("4_o7d5j")
+action = "ui_down"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+position = Vector2(976, 560)
+scale = Vector2(0.084, 0.084)
+texture_normal = ExtResource("5_hguqu")
+texture_pressed = ExtResource("6_je7v7")
+action = "ui_accept"

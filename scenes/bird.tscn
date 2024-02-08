@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://04yj2kk3qq2h"]
+
+[ext_resource type="Script" path="res://scenes/bird.gd" id="1_2xu2a"]
+[ext_resource type="Texture2D" uid="uid://dyasm1fruq87r" path="res://materiais/obstacles/Bird.png" id="1_5sumy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ktr6"]
+atlas = ExtResource("1_5sumy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmwi1"]
+atlas = ExtResource("1_5sumy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agxsg"]
+atlas = ExtResource("1_5sumy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6wjx"]
+atlas = ExtResource("1_5sumy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c0lrc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ktr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmwi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agxsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6wjx")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 10.0
+}]
+
+[node name="Bird" type="Area2D"]
+script = ExtResource("1_2xu2a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_c0lrc")
+animation = &"flying"
+frame = 1
+frame_progress = 0.175372
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-12, 8, -12, 16, -8, 16, -8, 24, -4, 24, -4, 28, 0, 28, 0, 32, 8, 32, 8, 36, 16, 36, 16, 40, 20, 40, 20, 44, 24, 44, 24, 48, 28, 48, 28, 44, 32, 44, 32, 36, 36, 36, 36, 40, 40, 40, 40, 44, 44, 44, 44, 40, 48, 40, 48, 32, 44, 32, 44, 24, 48, 24, 48, 16, 52, 16, 52, 4, 56, 4, 56, 0, 60, 0, 60, -4, 64, -4, 64, -12, 60, -12, 60, -16, 48, -16, 48, -20, 44, -20, 44, -28, 40, -28, 40, -32, 36, -32, 36, -36, 32, -36, 32, -40, 24, -40, 24, -44, 0, -44, 0, -40, -8, -40, -8, -36, -12, -36, -12, -32, -16, -32, -16, -24, -40, -24, -40, -20, -48, -20, -48, -16, -52, -16, -52, -12, -56, -12, -56, -4, -60, -4, -60, 12, -56, 12, -56, 20, -52, 20, -52, 24, -48, 24, -48, 28, -36, 28, -36, 20, -32, 20, -32, 16, -28, 16, -28, 12, -20, 12, -20, 8)
